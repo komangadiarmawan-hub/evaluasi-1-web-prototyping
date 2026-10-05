@@ -1,0 +1,848 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+select {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* =========================
+   APP
+========================= */
+
+.app {
+  min-height: 100vh;
+  transition: 0.3s;
+}
+
+.dark {
+  background: #080c14;
+  color: white;
+}
+
+.light {
+  background: #f3f5f8;
+  color: #172033;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  height: 75px;
+  padding: 0 6%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: sticky;
+  top: 0;
+  z-index: 10;
+
+  border-bottom: 1px solid #222c3d;
+
+  backdrop-filter: blur(10px);
+}
+
+.dark .header {
+  background: rgba(8, 12, 20, 0.95);
+}
+
+.light .header {
+  background: rgba(255, 255, 255, 0.95);
+  border-color: #dfe4eb;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #b8ff28;
+  color: #10140b;
+
+  border-radius: 10px;
+
+  font-size: 22px;
+}
+
+.logo-area h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.logo-area span {
+  font-size: 11px;
+  color: #7d899d;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+  display: flex;
+  gap: 5px;
+}
+
+nav button {
+  padding: 10px 15px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: transparent;
+  color: #8490a4;
+}
+
+nav button:hover,
+nav button.active {
+  background: #172131;
+  color: #b8ff28;
+}
+
+.light nav button:hover,
+.light nav button.active {
+  background: #eaf2dc;
+}
+
+/* =========================
+   THEME
+========================= */
+
+.theme-button {
+  width: 40px;
+  height: 40px;
+
+  border: 1px solid #2b374b;
+  border-radius: 10px;
+
+  background: transparent;
+  color: inherit;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+  width: 88%;
+  max-width: 1180px;
+
+  margin: auto;
+
+  padding: 50px 0 80px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  min-height: 330px;
+
+  padding: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: 25px;
+
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(184, 255, 40, 0.18),
+      transparent 35%
+    ),
+    #111a27;
+
+  border: 1px solid #26344a;
+}
+
+.light .hero {
+  background: linear-gradient(
+    135deg,
+    white,
+    #eef5e6
+  );
+
+  border-color: #dce5d2;
+}
+
+.small-title {
+  color: #a8c970;
+
+  font-size: 11px;
+  font-weight: bold;
+
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  font-size: 50px;
+
+  margin: 12px 0;
+
+  letter-spacing: -2px;
+}
+
+.hero h1 span {
+  color: #b8ff28;
+}
+
+.hero p {
+  max-width: 570px;
+
+  line-height: 1.7;
+
+  color: #929daf;
+}
+
+.main-button {
+  margin-top: 15px;
+
+  padding: 13px 20px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #b8ff28;
+  color: #0c1109;
+
+  font-weight: bold;
+}
+
+.big-ball {
+  font-size: 150px;
+  opacity: 0.2;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 15px;
+
+  margin: 18px 0;
+}
+
+.stat-card {
+  padding: 20px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  border: 1px solid #202b3e;
+
+  border-radius: 15px;
+}
+
+.dark .stat-card,
+.dark .panel,
+.dark .player-card,
+.dark .match-card,
+.dark .table-container {
+  background: #0e141f;
+}
+
+.light .stat-card,
+.light .panel,
+.light .player-card,
+.light .match-card,
+.light .table-container {
+  background: white;
+  border-color: #dce3ed;
+}
+
+.stat-icon {
+  font-size: 25px;
+}
+
+.stat-card p {
+  margin: 0 0 5px;
+
+  color: #7f8b9f;
+
+  font-size: 13px;
+}
+
+.stat-card h2 {
+  margin: 0;
+
+  font-size: 26px;
+}
+
+/* =========================
+   DASHBOARD GRID
+========================= */
+
+.dashboard-grid {
+  display: grid;
+
+  grid-template-columns: 1.5fr 1fr;
+
+  gap: 18px;
+}
+
+.panel {
+  padding: 25px;
+
+  border: 1px solid #202b3e;
+
+  border-radius: 17px;
+}
+
+.panel h2 {
+  margin-top: 8px;
+}
+
+.match {
+  margin: 35px 0 20px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: space-around;
+
+  text-align: center;
+}
+
+.club-logo {
+  width: 65px;
+  height: 65px;
+
+  margin: auto auto 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #b8ff28;
+
+  color: #111;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.opponent {
+  background: #2c384c;
+  color: white;
+}
+
+.vs strong {
+  font-size: 28px;
+}
+
+.vs span {
+  display: block;
+
+  margin-top: 5px;
+
+  font-size: 12px;
+
+  color: #7e8a9e;
+}
+
+.location {
+  color: #7f8b9f;
+  font-size: 13px;
+}
+
+.form {
+  display: flex;
+  gap: 10px;
+
+  margin: 30px 0 15px;
+}
+
+.form span {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  font-weight: bold;
+}
+
+.win {
+  background: #1d5c2d;
+  color: #9df0ae;
+}
+
+.draw {
+  background: #5c521e;
+  color: #ffe98a;
+}
+
+.loss {
+  background: #63282d;
+  color: #ffadb3;
+}
+
+/* =========================
+   PAGE TITLE
+========================= */
+
+.page-title {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: end;
+
+  margin-bottom: 30px;
+}
+
+.page-title h1 {
+  font-size: 42px;
+
+  margin: 10px 0;
+}
+
+.page-title p {
+  color: #7f8b9f;
+}
+
+/* =========================
+   FILTER
+========================= */
+
+.filters {
+  display: flex;
+
+  gap: 10px;
+}
+
+.filters input,
+.filters select {
+  padding: 11px 13px;
+
+  border-radius: 9px;
+
+  border: 1px solid #2b374a;
+
+  outline: none;
+}
+
+.dark .filters input,
+.dark .filters select {
+  background: #111925;
+  color: white;
+}
+
+.light .filters input,
+.light .filters select {
+  background: white;
+  color: #172033;
+}
+
+/* =========================
+   PLAYERS
+========================= */
+
+.players {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 16px;
+}
+
+.player-card {
+  padding: 20px;
+
+  border: 1px solid #202b3e;
+
+  border-radius: 17px;
+
+  text-align: center;
+}
+
+.player-header {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.number {
+  color: #b8ff28;
+
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.favorite {
+  border: none;
+
+  background: transparent;
+
+  color: #68758a;
+
+  font-size: 23px;
+}
+
+.favorite.selected {
+  color: #b8ff28;
+}
+
+.player-avatar {
+  width: 75px;
+  height: 75px;
+
+  margin: 15px auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #1b2739;
+
+  color: #b8ff28;
+
+  font-weight: bold;
+
+  font-size: 21px;
+}
+
+.player-card h3 {
+  margin-bottom: 5px;
+}
+
+.player-card p {
+  color: #7f8b9f;
+
+  font-size: 13px;
+}
+
+.badge {
+  display: inline-block;
+
+  padding: 5px 9px;
+
+  border-radius: 50px;
+
+  font-size: 10px;
+
+  font-weight: bold;
+}
+
+.starter {
+  background: #17351f;
+  color: #91e8a0;
+}
+
+.substitute {
+  background: #252e3d;
+  color: #adb8c8;
+}
+
+.captain {
+  background: #b8ff28;
+  color: #10150b;
+}
+
+/* =========================
+   MATCHES
+========================= */
+
+.matches {
+  display: grid;
+  gap: 14px;
+}
+
+.match-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  padding: 20px;
+
+  border: 1px solid #202b3e;
+
+  border-radius: 15px;
+}
+
+.date {
+  width: 70px;
+
+  padding-right: 20px;
+
+  text-align: center;
+
+  border-right: 1px solid #2b374a;
+}
+
+.date strong {
+  display: block;
+
+  font-size: 25px;
+}
+
+.date span {
+  color: #7f8b9f;
+}
+
+.match-info {
+  flex: 1;
+}
+
+.match-info small {
+  color: #b8ff28;
+
+  font-weight: bold;
+}
+
+.match-info h3 {
+  margin: 7px 0;
+}
+
+.match-info h3 span {
+  color: #727e91;
+
+  margin: 0 5px;
+}
+
+.match-info p {
+  margin: 0;
+
+  color: #7f8b9f;
+
+  font-size: 13px;
+}
+
+.home,
+.away {
+  padding: 7px 10px;
+
+  border-radius: 50px;
+
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.home {
+  background: #193316;
+  color: #b8ff28;
+}
+
+.away {
+  background: #252e3d;
+  color: #adb8c8;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.table-container {
+  overflow-x: auto;
+
+  border: 1px solid #202b3e;
+
+  border-radius: 17px;
+}
+
+table {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  min-width: 600px;
+}
+
+th,
+td {
+  padding: 17px 20px;
+
+  text-align: left;
+
+  border-bottom: 1px solid #202b3e;
+}
+
+th {
+  color: #788498;
+
+  font-size: 11px;
+
+  letter-spacing: 1px;
+}
+
+.my-team {
+  background: rgba(184, 255, 40, 0.08);
+}
+
+.my-team td:first-child,
+.my-team td:last-child {
+  color: #b8ff28;
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.empty {
+  grid-column: 1 / -1;
+
+  padding: 50px;
+
+  text-align: center;
+
+  border: 1px dashed #36435a;
+
+  border-radius: 15px;
+
+  color: #7f8b9f;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  width: 88%;
+  max-width: 1180px;
+
+  margin: auto;
+
+  padding: 25px 0 35px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  border-top: 1px solid #202a3a;
+
+  color: #68758a;
+
+  font-size: 12px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .header {
+    padding: 15px 4%;
+
+    height: auto;
+
+    flex-wrap: wrap;
+  }
+
+  nav {
+    order: 3;
+
+    width: 100%;
+
+    justify-content: center;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .players {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .big-ball {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  main {
+    width: 90%;
+    padding-top: 30px;
+  }
+
+  .hero {
+    padding: 30px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .stats,
+  .players {
+    grid-template-columns: 1fr;
+  }
+
+  .page-title {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .filters {
+    width: 100%;
+  }
+
+  .filters input,
+  .filters select {
+    width: 50%;
+  }
+
+  .match-card {
+    gap: 12px;
+  }
+
+  footer {
+    width: 90%;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+}
